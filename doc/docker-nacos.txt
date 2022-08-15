@@ -1,0 +1,4 @@
+1、先拉取镜像
+命令：docker pull nacos/nacos-server:v2.0.4
+2、运行容器
+命令： docker run --name nacos(容器名称) -d -p 8848(外部访问端口):8848(容器内端口) --privileged=true --restart=always -e JVM_XMS=256m -e JVM_XMX=256m -e MODE=standalone -e PREFER_HOST_MODE=hostname -v /home/nacos/logs(数据卷主机地址):/home/nacos/logs（数据卷容器内部地址） -v /home/nacos/conf:/home/nacos/conf ea54f31c46e4（容器id）
