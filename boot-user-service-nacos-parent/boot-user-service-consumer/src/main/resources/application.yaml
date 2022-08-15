@@ -1,0 +1,28 @@
+server:
+  port: 8041
+  servlet:
+    context-path: /nacos_consumer
+
+spring:
+  application:
+    name: boot-user-service-consumer
+
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/gmall?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
+#    username: root
+#    password: Haibo918116
+#    driver-class-name: com.mysql.jdbc.Driver
+
+dubbo:
+  application:
+    name: boot-user-service-consumer
+  protocol:
+    port:
+      20881
+  registry:
+    address: nacos://127.0.0.1:8848
